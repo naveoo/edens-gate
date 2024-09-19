@@ -58,6 +58,10 @@ body {
     from { left: 50%; }
     to   { left: 0%; }
 }
+@keyframes swipeUp {
+    from { top: 50%; }
+    to   { top: 0%; }
+}
 @keyframes fadeOut {
     0% { opacity: 1;}
     100% { opacity: 0;}
@@ -201,3 +205,63 @@ body {
 #image img {
     width: 500px;
 }
+
+/*
+==============================
+    Responsive
+==============================
+*/
+@media only screen and (max-width: 800px) {
+    .titleSection {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 50%;
+    }
+    .titleSection h1 {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+       font-size: 5em;
+    }
+
+    .synopsisSection {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        top: 50%;
+    }
+    .synopsisSection p{
+        position: absolute;
+        left: 5%;
+        right: 5%;
+    }
+    .synopsisSection .notifications {
+        width: 60px;
+    }
+    .synopsisSection .links {
+        position: absolute;
+        top: 200%;
+        right: 5%;
+        left: 5%;
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+    .synopsisSection .links a img{
+        width: 100px;
+        margin: 10px;
+    }
+    .synopsisSection .read{
+        position: absolute;
+        bottom: -100%;
+        right: 10%;
+        left: 10%;
+    }
+    .synopsisChanging {
+        animation: 1s ease-in-out swipeUp;
+        animation-fill-mode: forwards;
+    }
+  }

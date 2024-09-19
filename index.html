@@ -8,7 +8,7 @@
 </head>
 <body>
     <section class="titleSection">
-        <img src="assets/images/apple.jpeg" alt="">
+        <img src="assets/images/apple.jpeg" alt="Eden's Gate">
         <h1>EDEN'S GATE</h1>
     </section>
     <section class="synopsisSection">
@@ -25,41 +25,54 @@
     </section>
     <script>
         function play() {
+            let size = window.innerWidth;
             document.querySelector(".synopsisSection").className = "synopsisSection";
             document.querySelector(".notifications").className = "notifications";
             document.querySelector(".paragraph").className = "paragraph";
             document.querySelector(".links").className = "links";
             document.querySelector(".read").className = "read";
-            window.requestAnimationFrame(function (time) {
+            if (size > 800) {
                 window.requestAnimationFrame(function (time) {
-                    document.querySelector(".synopsisSection").className = "synopsisSection synopsisChanging";
-                    setTimeout(() => {
-                        document.location.href="pages/chapters.html";
-                    }, 2000);
-                    
+                    window.requestAnimationFrame(function (time) {
+                        document.querySelector(".synopsisSection").className = "synopsisSection synopsisChanging";
+                        setTimeout(() => {
+                            document.location.href="pages/chapters.html";
+                        }, 2000);
+                        
+                    });
                 });
-            });
-            window.requestAnimationFrame(function (time) {
+            }else {
                 window.requestAnimationFrame(function (time) {
-                    document.querySelector(".notifications").className = "notifications fadeOut";
+                    window.requestAnimationFrame(function (time) {
+                        document.querySelector(".synopsisSection").className = "synopsisSection synopsisChanging";
+                        setTimeout(() => {
+                            document.location.href="pages/chapters.html";
+                        }, 1000);
+                        
+                    });
                 });
-            });
+            }
             window.requestAnimationFrame(function (time) {
-            window.requestAnimationFrame(function (time) {
-                document.querySelector(".paragraph").className = "fadeOut";
-            });
-            });
-            window.requestAnimationFrame(function (time) {
-            window.requestAnimationFrame(function (time) {
-                document.querySelector(".links").className = "links fadeOut";
-            });
-            });
-            window.requestAnimationFrame(function (time) {
-            window.requestAnimationFrame(function (time) {
-                document.querySelector(".read").className = "read fadeOut";
-            });
-            });
-        }
+                    window.requestAnimationFrame(function (time) {
+                        document.querySelector(".notifications").className = "notifications fadeOut";
+                    });
+                });
+                window.requestAnimationFrame(function (time) {
+                window.requestAnimationFrame(function (time) {
+                    document.querySelector(".paragraph").className = "fadeOut";
+                });
+                });
+                window.requestAnimationFrame(function (time) {
+                window.requestAnimationFrame(function (time) {
+                    document.querySelector(".links").className = "links fadeOut";
+                });
+                });
+                window.requestAnimationFrame(function (time) {
+                window.requestAnimationFrame(function (time) {
+                    document.querySelector(".read").className = "read fadeOut";
+                });
+                });
+    }
 
     </script>
 </body>
