@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Eden's Gate</title>
+</head>
+<body>
+    <section class="titleSection">
+        <img src="assets/images/apple.jpeg" alt="">
+        <h1>EDEN'S GATE</h1>
+    </section>
+    <section class="synopsisSection">
+        <button class="notifications"><img src="assets/images/notification.png" alt=""></button>
+        <p class="paragraph">
+            Recluse dans une ville isolée de Russie depuis sa naissance, Saskia est une jeune femme tenue d'enchaîner les travails épuisants pour se nourrir et lors d'une énième journée de bucheronnage, une douleur la frappa, une douleur qui la tranforma en actrice d'une compétition divine pour assurer l'existence de l'humanité ou alors de l'enterrer...
+        </p><br>
+        <button class="read" onclick="play()">LIRE MAINTENANT</button><br>
+        <div class="links">
+            <a href=""><img src="assets/images/wattpad.png" alt="Wattpad"></a>
+            <a href=""><img src="assets/images/instagram.png" alt="Instagram"></a>
+            <a href="https://discord.gg/ZT5ewEz76q"><img src="assets/images/discorde.png" alt="Discord"></a>
+        </div>
+    </section>
+    <script>
+        function play() {
+            document.querySelector(".synopsisSection").className = "synopsisSection";
+            document.querySelector(".notifications").className = "notifications";
+            document.querySelector(".paragraph").className = "paragraph";
+            document.querySelector(".links").className = "links";
+            document.querySelector(".read").className = "read";
+            window.requestAnimationFrame(function (time) {
+                window.requestAnimationFrame(function (time) {
+                    document.querySelector(".synopsisSection").className = "synopsisSection synopsisChanging";
+                    setTimeout(() => {
+                        document.location.href="pages/chapters.html";
+                    }, 2000);
+                    
+                });
+            });
+            window.requestAnimationFrame(function (time) {
+                window.requestAnimationFrame(function (time) {
+                    document.querySelector(".notifications").className = "notifications fadeOut";
+                });
+            });
+            window.requestAnimationFrame(function (time) {
+            window.requestAnimationFrame(function (time) {
+                document.querySelector(".paragraph").className = "fadeOut";
+            });
+            });
+            window.requestAnimationFrame(function (time) {
+            window.requestAnimationFrame(function (time) {
+                document.querySelector(".links").className = "links fadeOut";
+            });
+            });
+            window.requestAnimationFrame(function (time) {
+            window.requestAnimationFrame(function (time) {
+                document.querySelector(".read").className = "read fadeOut";
+            });
+            });
+        }
+
+    </script>
+</body>
+</html>

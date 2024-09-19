@@ -1,0 +1,203 @@
+/*
+==============================
+    Imports
+==============================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/*
+==============================
+    Page
+==============================
+*/
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Abril Fatface', Arial, Helvetica, sans-serif;
+    background-color: #010B17;
+}
+
+/*
+==============================
+    Title section
+==============================
+*/
+.titleSection {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 50%;
+    text-align: center;
+}
+.titleSection img {
+    width: 100%;
+    z-index: -1;
+}
+.titleSection h1 {
+    position: absolute;
+    top: 30%;
+    left: 11%;
+    font-size: 7em;
+    color: white;
+    mix-blend-mode: difference;
+}
+/*
+==============================
+    Synopsis section
+==============================
+*/
+@keyframes ring {
+    0% { transform: rotate(15deg); }
+    50%   { transform: rotate(-15deg); }
+    100%   { transform: rotate(15deg); }
+}
+@keyframes swipe {
+    from { left: 50%; }
+    to   { left: 0%; }
+}
+@keyframes fadeOut {
+    0% { opacity: 1;}
+    100% { opacity: 0;}
+}
+
+.synopsisSection {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    background-color: #010B17;
+}
+.synopsisChanging {
+    animation: 2s ease-in-out swipe;
+    animation-fill-mode: forwards;
+}
+.fadeOut{
+    animation: 1s ease-in-out fadeOut;
+    animation-fill-mode: forwards;
+}
+.synopsisSection p {
+    font-size: 1.5em;
+    color: #fff;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    right: 5%;
+}
+.synopsisSection .notifications {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    width: 8%;
+    height: 8%;
+}
+.synopsisSection .notifications img {
+    filter: invert();
+    width: 100%;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.synopsisSection .notifications img:hover {
+    animation: 1s ease-in-out infinite ring;
+}
+.synopsisSection .read {
+    padding: 2%;
+    font-size: 2em;
+    position: absolute;
+    bottom: 25%;
+    right: 40%;
+    background:none;
+    border: none;
+    color: #dddddd;
+    cursor: pointer;
+    font-family: 'Abril Fatface', Arial, Helvetica, sans-serif;
+    transition: 0.3s all ease-out;
+}
+.synopsisSection .read:hover{
+    color: #fff;
+    font-size: 2.3em;
+    transform: translateY(-10px);
+}
+.synopsisSection .links {
+    filter: invert();
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+
+    display: flex;
+}
+.synopsisSection .links img{
+    width: 30%;
+    transition: all 0.3s ease-out;
+}
+.synopsisSection .links img:hover{
+    transform: rotate(15deg);
+}
+
+
+/*
+    Chapters
+*/
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-50px);}
+    100% { opacity: 1; transform: translateX(0px);}
+}
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(-50px);}
+    100% { opacity: 1; transform: translateY(0px);}
+}
+
+#nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 60%;
+}
+#content {
+    font-family: 'lato';
+    font-size: 1.2em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 40%;
+    padding-right: 4%;
+    padding-left: 4%;
+    padding-top: 2%;
+    color: #fff;
+    mix-blend-mode: difference;
+    white-space: pre-wrap;
+    animation: 2s fadeInUp;
+}
+#buttonsContainer button{
+    margin: 2%;
+    font-family: 'Abril Fatface', Arial, Helvetica, sans-serif;
+    display: block;
+    width: 60%;
+    text-align: left;
+    background: #e4e000;
+    border: 1px solid #bdba01;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: 1s ease-in-out fadeInLeft;
+}
+#buttonsContainer button:not(.active):hover{
+    transform: translateX(20px);
+}
+#buttonsContainer .active{
+    background: #bdba01;
+}
+#image img {
+    width: 500px;
+}
