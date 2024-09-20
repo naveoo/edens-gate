@@ -26,6 +26,13 @@ function loadChapter(index) {
         })
         .catch(error => console.error('Erreur de chargement du fichier:', error));
 }
+function generateImages(unit) {
+    const imageContainer = document.getElementById('image');
+    imageContainer.innerHTML = ''; // Réinitialiser les boutons
+    const image = document.createElement('img');
+    image.src = unit.image;
+    imageContainer.appendChild(image);
+}
 
 // Fonction pour générer les boutons de navigation
 function generateButtons() {
@@ -35,25 +42,14 @@ function generateButtons() {
         const button = document.createElement('button');
         button.textContent = chapter.title;
         button.addEventListener('click', () => loadChapter(index));
-        button.addEventListener('click', () => generateImages(index));
-        console.log(index)
         buttonsContainer.appendChild(button);
     });
-
     // Charger le premier chapitre par défaut
     if (chapters.length > 0) {
         loadChapter(0);
     }
 }
-function generateImages(unit) {
-    const buttonsContainer = document.getElementById('image');
-    buttonsContainer.innerHTML = ''; // Réinitialiser les boutons
-    const button = document.createElement('img');
-    button.src = unit.image;
-    button.addEventListener('click', () => loadChapter(index));
-    buttonsContainer.appendChild(button);
-    console.log(unit)
-}
+
 
 // Générer les boutons lorsque la page est prête
 document.addEventListener('DOMContentLoaded', generateButtons);

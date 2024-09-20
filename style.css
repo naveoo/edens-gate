@@ -290,6 +290,7 @@ body {
         width: auto;
         font-size: 1.3em;
         padding: 16px 24px;
+        z-index: 10;
     }
     #image img {
         position: relative;
@@ -301,5 +302,8 @@ body {
     }
     #content p{
         position: relative;
+    }
+    #buttonsContainer button:not(.active):hover{
+        transform: translateX(0px);
     }
   }
