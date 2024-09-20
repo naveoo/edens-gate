@@ -148,7 +148,9 @@ body {
 
 
 /*
+==============================
     Chapters
+==============================
 */
 @keyframes fadeInLeft {
     0% { opacity: 0; transform: translateX(-50px);}
@@ -212,6 +214,9 @@ body {
 ==============================
 */
 @media only screen and (max-width: 800px) {
+    /*
+        Page
+    */
     .titleSection {
       position: absolute;
       top: 0;
@@ -263,5 +268,38 @@ body {
     .synopsisChanging {
         animation: 1s ease-in-out swipeUp;
         animation-fill-mode: forwards;
+    }
+    /*
+        Chapters
+    */
+    #nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 20%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #content {
+        position: inherit;
+    }
+    #buttonsContainer button{
+        position: relative;
+        display:inline-flex;
+        width: auto;
+        font-size: 1.3em;
+        padding: 16px 24px;
+    }
+    #image img {
+        position: relative;
+        margin-top: 55%;
+        width: 100%;
+    }
+    #content h1{
+        position: relative;
+    }
+    #content p{
+        position: relative;
     }
   }

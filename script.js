@@ -52,6 +52,7 @@ function generateImages(unit) {
     button.src = unit.image;
     button.addEventListener('click', () => loadChapter(index));
     buttonsContainer.appendChild(button);
+    console.log(unit)
 }
 
 // Générer les boutons lorsque la page est prête
