@@ -184,14 +184,14 @@ body {
     white-space: pre-wrap;
     animation: 2s fadeInUp;
 }
-#buttonsContainer button{
+#buttonsContainer button, .next-chapter{
     margin: 2%;
     font-family: 'Abril Fatface', Arial, Helvetica, sans-serif;
     display: block;
     width: 60%;
     text-align: left;
-    background: #e4e000;
-    border: 1px solid #bdba01;
+    background: #ffd700;
+    border: 1px solid #bea200;
     border-radius: 4px;
     padding: 10px;
     cursor: pointer;
@@ -202,7 +202,7 @@ body {
     transform: translateX(20px);
 }
 #buttonsContainer .active{
-    background: #bdba01;
+    background: #bea200;
 }
 #image img {
     width: 500px;
